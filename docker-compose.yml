@@ -1,0 +1,11 @@
+web:
+  build: .
+  command: ruby app.rb
+  ports:
+  - '4567:4567'
+  volumes:
+  - .:/urlshortener
+  links:
+  - redis
+redis:
+  image: orchardup/redis
